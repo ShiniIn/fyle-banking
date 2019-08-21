@@ -47,6 +47,14 @@ Now First of all user will have to generate a authentication token and further i
  3. Getting the  Details of a branches of a particular bank in particular city
   
         curl -v 'https://damp-island-53265.herokuapp.com/graphql' \-H 'content-type: application/json' \-H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaHJpa2FudCIsImlhdCI6MTU2NjM4ODAzMywiZXhwIjoxNTY2MzkxNjMzfQ.hgIW7C8FvGmgesm5mNJQa5vKd-9R7Lsz2ziknaK42hw' \-H 'accept: application/json' --data-binary '{"query":"mutation{getBankBranchesByCity(bankName:\"ABHYUDAYA COOPERATIVE BANK LIMITED\" city:\"MUMBAI\" limit:2 offSet:2){ifsc address city district state bankId branch}}","variables":"{}","operationName":null}'
+        
+        
+        
+
+## following users can be used to generate token.
+
+1.UserName : shrikant,Password : shrikant    
+2.Username : bhawesh,Password : bhawesh
  
  
     
