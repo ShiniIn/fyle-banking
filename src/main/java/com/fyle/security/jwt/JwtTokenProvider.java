@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.Base64;
 import java.util.Date;
 
@@ -25,7 +26,7 @@ public class JwtTokenProvider {
   private String secretKey;
   
   @PostConstruct
-  protected void init() {
+  protected void init() throws IOException {
     secretKey = Base64.getEncoder().encodeToString(jwtProperties.getSecretKey().getBytes());
   }
   
