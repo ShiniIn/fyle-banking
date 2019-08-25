@@ -33,23 +33,19 @@ Now First of all user will have to generate a authentication token and further i
 
  1. The authentication or SignIn API (GET API)
    By providing valid Username and Password in this API you will be retured with a particular token which would be valid for 5 days.It first validates the input from the database and if there is a correponding record in the DB it returna an JWT key else it reurn error.
-   
-    https://XYZ/auth/signin?username=????password=++++
-   
+      
     curl 'https://damp-island-53265.herokuapp.com/auth/signin?username=shrikant&password=shrikant'
    
  2. Getting the Branch Details of a single branch by its IFSC code
     
     I have created restful service using graphql so endpint is same for other apis too. For example you can use the api by using the curl command.
     
-        curl -v 'https://guarded-retreat-44845.herokuapp.com/graphql' \-H 'content-type: application/json' \-H 'Authorization:  Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaHJpa2FudCIsImlhdCI6MTU2NjM4OTU2NSwiZXhwIjoxNTY2MzkzMTY1fQ._zRGNATsbQIsb2Za3tsetq8TMAWcRUzx63QRLCk1fx0'  \-H 'accept: application/json' --data-binary '{"query":"{getBranchByIFSC(ifsc:\"ASBL0000047\"){ifsc address district city state bankId branch}}","variables":"{}","operationName":null}'
+        curl 'https://damp-island-53265.herokuapp.com/getBranch?Ifsc=ASBL0000047' -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaHJpa2FudCIsImlhdCI6MTU2NjczNjg0MCwiZXhwIjoxNTY3MTY4ODQwfQ.AOzArE5uD-D4mku-VWWaHKR1latd-4ts4U3gkY1CU_c'
     
  3. Getting the  Details of a branches of a particular bank in particular city
   
-        curl -v 'https://damp-island-53265.herokuapp.com/graphql' \-H 'content-type: application/json' \-H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaHJpa2FudCIsImlhdCI6MTU2NjM4ODAzMywiZXhwIjoxNTY2MzkxNjMzfQ.hgIW7C8FvGmgesm5mNJQa5vKd-9R7Lsz2ziknaK42hw' \-H 'accept: application/json' --data-binary '{"query":"mutation{getBankBranchesByCity(bankName:\"ABHYUDAYA COOPERATIVE BANK LIMITED\" city:\"MUMBAI\" limit:2 offSet:2){ifsc address city district state bankId branch}}","variables":"{}","operationName":null}'
-        
-        
-        
+        curl 'https://damp-island-53265.herokuapp.com/getBranches?city=MUMBAI&bankName=ABHYUDAYA%20COOPERATIVE%20BANK%20LIMITED&limit=4&offSet=1' -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaHJpa2FudCIsImlhdCI6MTU2NjczNjg0MCwiZXhwIjoxNTY3MTY4ODQwfQ.AOzArE5uD-D4mku-VWWaHKR1latd-4ts4U3gkY1CU_c'
+          
 
 ## following users can be used to generate token.
 
