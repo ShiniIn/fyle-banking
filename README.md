@@ -49,8 +49,8 @@ Now First of all user will have to generate a authentication token and further i
 
 ## following users can be used to generate token.
 
-1.UserName : shrikant,Password : shrikant    
-2.Username : bhawesh,Password : bhawesh
+1.UserName : shrikant, Password : shrikant    
+2.Username : bhawesh, Password : bhawesh
  
  
     
